@@ -14,6 +14,7 @@ u32 getBatteryPercent(void)
 }
 
 const char *colors[] = {
+    "\x1b[40m"  // black
     "\x1b[41m", // red
     "\x1b[42m", // green
     "\x1b[43m", // yellow
@@ -21,7 +22,6 @@ const char *colors[] = {
     "\x1b[45m", // magenta
     "\x1b[46m", // cyan
     "\x1b[47m", // white
-    "\x1b[40m"  // black
 };
 
 void printBackgroundColor(const char *color);
@@ -74,7 +74,7 @@ int main(int argc, char **argv)
                 if (menuButtons & HidNpadButton_A) {
                     printBackgroundColor(colors[colorIndex]);
                     colorIndex++;
-                    if (colorIndex >= 8) colorIndex = 0;
+                    if (colorIndex >= 14) colorIndex = 0;
                 }
 
                 consoleUpdate(NULL);
